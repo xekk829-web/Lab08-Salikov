@@ -1,2 +1,14 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+﻿string text = "Hello World!";
+PrintHeader(text);
+
+static void PrintLine()
+{
+    Console.WriteLine("^_^");
+}
+
+static void PrintHeader(string title)
+{
+    PrintLine();
+    Console.WriteLine(title);
+    PrintLine();
+}
