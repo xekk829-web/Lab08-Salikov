@@ -21,19 +21,65 @@
 // Console.WriteLine(ToFahrenheit(212));
 // Console.WriteLine(ToFahrenheit(98.6));
 
-// Задание 5
-Console.WriteLine(Factorial(5));
+// // Задание 5
+// Console.WriteLine(Factorial(5));
 
-for (int i = 2; i <= 50; i++)
+// for (int i = 2; i <= 50; i++)
+// {
+//     Console.WriteLine($"Число {i} - простое: {IsPrime(i)}");
+// }
+
+// // Задание 6
+// int num1 = ReadPositive("Введите первое число: ");
+// int num2 = ReadPositive("Введите второе число: ");
+
+// Console.WriteLine("Сумма чисел: " + (num1 + num2));
+
+Console.WriteLine("Добро пожаловать в калькулятор-меню!");
+
+string choice;
+
+do
 {
-    Console.WriteLine($"Число {i} - простое: {IsPrime(i)}");
-}
+    Console.WriteLine("1 - сумма двух чисел");
+    Console.WriteLine("2 - большее из двух чисел");
+    Console.WriteLine("3 - факториал");
+    Console.WriteLine("0 - выход");
+    Console.Write("Введите комманду > ");
 
-// Задание 6
-int num1 = ReadPositive("Введите первое число: ");
-int num2 = ReadPositive("Введите второе число: ");
+    choice = Console.ReadLine();
 
-Console.WriteLine("Сумма чисел: " + (num1 + num2));
+    switch (choice)
+    {
+        case "1":
+            Console.Write("Введите первое число: ");
+            int a = Convert.ToInt32(Console.ReadLine());
+            Console.Write("Введите второе число: ");
+            int b = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Сумма чисел: " + Sum(a, b));
+            break;
+        case "2":
+            Console.Write("Введите первое число: ");
+            a = Convert.ToInt32(Console.ReadLine());
+            Console.Write("Введите второе число: ");
+            b = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Большее число: " + Max(a, b));
+            break;
+        case "3":
+            Console.Write("Введите число: ");
+            a = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Факториал числа: " + Factorial(a));
+            break;
+        case "0":
+            Console.WriteLine("До свидания!");
+            break;
+        default:
+            Console.WriteLine("Введена неизвестная команда. Проверьте правильность ввода!");
+            break;
+    }
+
+    Console.WriteLine();
+} while (choice != "0");
 
 // Методы
 // Задание 1
@@ -50,6 +96,11 @@ static void PrintHeader(string title)
 }
 
 // Задание 2
+static int Sum(int a, int b)
+{
+    return a + b;
+}
+
 static int Max(int a, int b)
 {
     if (a > b)
