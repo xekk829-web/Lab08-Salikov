@@ -11,11 +11,15 @@
 // Console.WriteLine(IsEven(7));
 // Console.WriteLine(IsEven(0));
 
-// Задание 3
-int[] marks = { 120, 45, 300, 80, 15, 210 };
-Console.WriteLine(Average(marks));
-Console.WriteLine(CountGreater(marks, 100));
+// // Задание 3
+// int[] marks = { 120, 45, 300, 80, 15, 210 };
+// Console.WriteLine(Average(marks));
+// Console.WriteLine(CountGreater(marks, 100));
 
+// Задание 4
+Console.WriteLine(ToFahrenheit(32));
+Console.WriteLine(ToFahrenheit(212));
+Console.WriteLine(ToFahrenheit(98.6));
 
 // Методы
 // Задание 1
@@ -69,3 +73,6 @@ static int CountGreater(int[] arr, int limit)
     }
     return counter;
 }
+
+// Задание 4
+static double ToFahrenheit(double celsius) { return celsius * 9 / 5 + 32; }
