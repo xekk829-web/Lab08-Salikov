@@ -35,51 +35,55 @@
 
 // Console.WriteLine("Сумма чисел: " + (num1 + num2));
 
-Console.WriteLine("Добро пожаловать в калькулятор-меню!");
+// Console.WriteLine("Добро пожаловать в калькулятор-меню!");
 
-string choice;
+// string choice;
 
-do
-{
-    Console.WriteLine("1 - сумма двух чисел");
-    Console.WriteLine("2 - большее из двух чисел");
-    Console.WriteLine("3 - факториал");
-    Console.WriteLine("0 - выход");
-    Console.Write("Введите комманду > ");
+// do
+// {
+//     Console.WriteLine("1 - сумма двух чисел");
+//     Console.WriteLine("2 - большее из двух чисел");
+//     Console.WriteLine("3 - факториал");
+//     Console.WriteLine("0 - выход");
+//     Console.Write("Введите комманду > ");
 
-    choice = Console.ReadLine();
+//     choice = Console.ReadLine();
 
-    switch (choice)
-    {
-        case "1":
-            Console.Write("Введите первое число: ");
-            int a = Convert.ToInt32(Console.ReadLine());
-            Console.Write("Введите второе число: ");
-            int b = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine("Сумма чисел: " + Sum(a, b));
-            break;
-        case "2":
-            Console.Write("Введите первое число: ");
-            a = Convert.ToInt32(Console.ReadLine());
-            Console.Write("Введите второе число: ");
-            b = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine("Большее число: " + Max(a, b));
-            break;
-        case "3":
-            Console.Write("Введите число: ");
-            a = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine("Факториал числа: " + Factorial(a));
-            break;
-        case "0":
-            Console.WriteLine("До свидания!");
-            break;
-        default:
-            Console.WriteLine("Введена неизвестная команда. Проверьте правильность ввода!");
-            break;
-    }
+//     switch (choice)
+//     {
+//         case "1":
+//             Console.Write("Введите первое число: ");
+//             int a = Convert.ToInt32(Console.ReadLine());
+//             Console.Write("Введите второе число: ");
+//             int b = Convert.ToInt32(Console.ReadLine());
+//             Console.WriteLine("Сумма чисел: " + Sum(a, b));
+//             break;
+//         case "2":
+//             Console.Write("Введите первое число: ");
+//             a = Convert.ToInt32(Console.ReadLine());
+//             Console.Write("Введите второе число: ");
+//             b = Convert.ToInt32(Console.ReadLine());
+//             Console.WriteLine("Большее число: " + Max(a, b));
+//             break;
+//         case "3":
+//             Console.Write("Введите число: ");
+//             a = Convert.ToInt32(Console.ReadLine());
+//             Console.WriteLine("Факториал числа: " + Factorial(a));
+//             break;
+//         case "0":
+//             Console.WriteLine("До свидания!");
+//             break;
+//         default:
+//             Console.WriteLine("Введена неизвестная команда. Проверьте правильность ввода!");
+//             break;
+//     }
 
-    Console.WriteLine();
-} while (choice != "0");
+//     Console.WriteLine();
+// } while (choice != "0");
+
+// Доп. Задание
+Console.WriteLine(Gcd(48, 18));
+Console.WriteLine(Lcm(4, 6));
 
 // Методы
 // Задание 1
@@ -177,4 +181,19 @@ static int ReadPositive(string message)
         num = Convert.ToInt32(Console.ReadLine());
     } while (num < 0);
     return num;
+}
+
+static int Gcd(int a, int b)
+{
+    do
+    {
+        (a, b) = (b, a % b);
+    } while (b != 0);
+
+    return a;
+}
+
+static int Lcm(int a, int b)
+{
+    return a / Gcd(a, b) * b;
 }
